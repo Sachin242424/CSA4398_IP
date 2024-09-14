@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - EV Charging Station Booking</title>
+    <style>
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 10px;
+    width: 50px; /* Adjust logo size */
+    height: auto;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+#profile {
+    padding-top: 100px;
+}
+
+.profile-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    flex-grow: 1;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+}
+
+.profile-info p {
+    font-size: 1rem;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.profile-actions button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.profile-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.profile-content p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.profile-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-content ul li {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        margin: 20px 0;
+    }
+
+    .profile-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .profile-actions button {
+        margin: 0 10px;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/50" alt="Logo">
+            <span>EV Charge</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#search">Search Stations</a></li>
+                <li><a href="index.html#forum">Forum</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="profile">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h2>Sachin</h2>
+                <p>@dilli</p>
+                <p>Electric Vehicle Enthusiast</p>
+            </div>
+            <div class="profile-actions">
+                <button id="edit-profile">Edit Profile</button>
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+        <div class="profile-content">
+            <h3>About Me</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+
+            <h3>My Bookings</h3>
+            <ul>
+                <li>Booking 1: Station A - 01/01/2024</li>
+                <li>Booking 2: Station B - 01/02/2024</li>
+                <li>Booking 3: Station C - 01/03/2024</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 EV Charging Station Booking</p>
+    </footer>
+
+    <!-- Add custom JavaScript for animations if needed -->
+    <script src="profile.js">// profile.js
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const profilePicture = document.querySelector('.profile-picture img');
+        
+            profilePicture.addEventListener('mouseover', () => {
+                profilePicture.style.transform = 'rotate(360deg)';
+                profilePicture.style.transition = 'transform 1s';
+            });
+        
+            profilePicture.addEventListener('mouseout', () => {
+                profilePicture.style.transform = 'rotate(0deg)';
+                profilePicture.style.transition = 'transform 1s';
+            });
+        });
+        </script>
+</body>
+</html>

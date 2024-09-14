@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Charging Station Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="Screenshot_2024-06-24_125854-removebg.png" alt="Logo">
+            <span>EV Charge</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="search.html">Search Stations</a></li>
+                <li><a href="forum1.html">Forum</a></li>
+                <li><a href="profile.html">Profile</a></li> 
+            </ul>
+        </nav>
+        <div class="user-dropdown">
+            <button class="user-button">
+                <img src="profile.jpg" alt="User Profile" class="user-profile-img">
+            </button>
+            <div class="dropdown-menu">
+                <a href="profile.html">Profile</a>
+                <a href="register.html">Register</a>
+                <a href="login.php">Login</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="signout.html">Sign Out</a>
+            </div>
+        </div>
+    </header>
+    
+    <section id="home">
+        <div class="hero">
+            <img src="main.png" alt="Find and Book EV Charging Stations" class="hero-image">
+            <button id="find-station">Find a Station</button>
+        </div>
+    </section>
+    
+    <hr class="section-divider">
+    
+    <section id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Real-Time Availability</h3>
+                    <p>Check real-time availability of charging stations.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Booking System</h3>
+                    <p>Book charging stations in advance.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>User Profiles</h3>
+                    <p>Manage bookings and view history in your profile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr class="section-divider">
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>For inquiries or support, please contact us:</p>
+            <ul>
+                <li>Email: info@evcharge.com</li>
+                <li>Phone: +1 (123) 456-7890</li>
+                <li>Address: 123 Charging Street, Electric City, CA</li>
+            </ul>
+            <div class="contact-buttons">
+                <a href="https://wa.me/1234567890" target="_blank" class="contact-button whatsapp">WhatsApp</a>
+                <a href="https://twitter.com/evcharge" target="_blank" class="contact-button twitter">Twitter</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 EV Charging Station Booking</p>
+    </footer>
+    
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: { lat: 37.7749, lng: -122.4194 } // Default center to San Francisco
+            });
+        
+            // Dummy data for charging stations
+            const stations = [
+                { position: { lat: 37.7749, lng: -122.4194 }, name: "Station 1" },
+                { position: { lat: 37.7849, lng: -122.4294 }, name: "Station 2" },
+                { position: { lat: 37.7949, lng: -122.4394 }, name: "Station 3" }
+            ];
+        
+            stations.forEach(station => {
+                new google.maps.Marker({
+                    position: station.position,
+                    map: map,
+                    title: station.name
+                });
+            });
+        }
+        
+        document.getElementById('find-station').addEventListener('click', () => {
+            document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const userButton = document.querySelector('.user-button');
+            const userDropdown = document.querySelector('.user-dropdown');
+    
+            userButton.addEventListener('click', () => {
+                userDropdown.classList.toggle('active');
+            });
+    
+            // Close the dropdown if clicked outside
+            document.addEventListener('click', (event) => {
+                if (!userDropdown.contains(event.target)) {
+                    userDropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
